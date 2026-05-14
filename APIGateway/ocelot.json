@@ -1,16 +1,15 @@
 {
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5000"
+    "BaseUrl": "https://appgateway-mansoor.azurewebsites.net"
   },
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/Auth/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          //"Host": "localhost",
-          "Host": "host.docker.internal",
-          "Port": 5001
+          "Host": "userservice-mansoor.azurewebsites.net",
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/gateway/auth/{everything}",
@@ -18,12 +17,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Patient/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          //"Host": "localhost",
-          "Host": "host.docker.internal",
-          "Port": 5002
+          "Host": "patientservice-mansoor.azurewebsites.net",
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/gateway/patient/{everything}",
@@ -35,12 +33,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Doctor/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          //"Host": "localhost",
-          "Host": "host.docker.internal",
-          "Port": 5003
+          "Host": "doctorservice-mansoor.azurewebsites.net/api/Doctor",
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/gateway/doctor/{everything}",
@@ -52,12 +49,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Appointment/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          //"Host": "localhost",
-          "Host": "host.docker.internal",
-          "Port": 5004
+          "Host": "appointmentservice-mansoor.azurewebsites.net",
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/gateway/appointment/{everything}",
