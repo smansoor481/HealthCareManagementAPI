@@ -21,7 +21,7 @@ namespace Gateway
             {
                 options.AddPolicy("AllowAngular", policy =>
                 {
-                    policy.WithOrigins("http://localhost:4200")
+                    policy.WithOrigins("https://polite-dune-06f0adf10.7.azurestaticapps.net")
                           .AllowAnyHeader()
                           .AllowAnyMethod();
                 });
