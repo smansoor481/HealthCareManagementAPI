@@ -66,7 +66,13 @@ namespace AppointmentService
                 app.UseSwaggerUI();
                 app.MapOpenApi();
             }
+            else if (app.Environment.IsProduction())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
 
+            app.MapGet("/", () => "Appointment Service Running");
             app.UseAuthentication();
             app.UseAuthorization();
 
