@@ -79,6 +79,7 @@ namespace PatientService
                 app.UseSwaggerUI();
             }
 
+            app.MapGet("/", () => "Patient Service Running");
             app.UseAuthentication();
             app.UseAuthorization();
 
