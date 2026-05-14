@@ -56,6 +56,7 @@ namespace Gateway
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.MapControllers();
 
             await app.UseOcelot();
 
