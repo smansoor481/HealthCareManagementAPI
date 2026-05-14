@@ -73,6 +73,11 @@ namespace PatientService
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            else if (app.Environment.IsProduction())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
 
             app.UseAuthentication();
             app.UseAuthorization();
