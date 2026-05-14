@@ -67,6 +67,13 @@ namespace DoctorService
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            else if (app.Environment.IsProduction())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
+            app.MapGet("/", () => "Doctor Service Running");
 
             app.UseAuthentication();
             app.UseAuthorization();
